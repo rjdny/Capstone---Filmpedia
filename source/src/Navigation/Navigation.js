@@ -13,7 +13,6 @@ export default function Navigation(){
         <Navbar
           className="Navy"
           collapseOnSelect
-          expand="full"
           bg='dark'
           variant='dark'
         >
@@ -21,16 +20,12 @@ export default function Navigation(){
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/home">Homepage</Nav.Link>
-              <Nav.Link href="/about">About Filmpedia</Nav.Link>
+              <Nav.Link onClick={() => {nav("/home")}}>Homepage</Nav.Link>
+              <Nav.Link onClick={() => {nav("/about")}}>About Filmpedia</Nav.Link>
             </Nav>
+            <button onClick={() => {localStorage.removeItem("userId"); window.location.reload()}}>Logout</button>
           </Navbar.Collapse>
         </Navbar>
-        <div className="CardHolder">
-          <Col>
-  
-          </Col>
-        </div>
       </div>
     )
 }
