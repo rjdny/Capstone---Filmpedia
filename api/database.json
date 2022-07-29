@@ -3,13 +3,35 @@
     {
       "id": 1,
       "username": "Ryan"
+    },
+    {
+      "username": "test",
+      "id": 2
     }
   ],
   "likes": [
     {
       "userId": 1,
+      "movieId": 81,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "movieId": 4,
+      "id": 5
+    },
+    {
+      "userId": 1,
       "movieId": 60,
-      "id": 1
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "movieId": 60,
+      "userId": 2,
+      "comment": "\"123\" so true!!!",
+      "id": 2
     }
   ],
   "movies": [
