@@ -9,6 +9,8 @@ export function LoginForm() {
   const [userName, setuserName] = useState("");
   const [userNameError, setuserNameError] = useState("");
 
+    var nav = useNavigate();
+
     const handleValidation = (event) => {
     let formIsValid = true;
 
@@ -25,20 +27,52 @@ export function LoginForm() {
             if(user.username === userName){
                 var myuser = user;
                 if(user != undefined){
-                    Database.Set_CurrentUserId(user.id)
+                    Database.Set_CurrentUser(user)
                     userFound = true;
-                    window.location.reload();
+                    nav("/movies")
+                    window.location.reload()
                 }
             }
         });
-        if(!userFound){
-            setuserNameError("No User Found.")
-        }
+          if(!userFound){
+              setuserNameError("No User Found.")
+          }
         })
 
     }
     return formIsValid;
   };
+
+  const handleRegister = (event) =>{
+    if(userName !== ""){
+      var formIsValid = true;
+      Database.mydb_get_users().then((users) => {
+      var userAlready = false;
+      users.forEach(user => {
+          if(user.username === userName){
+              var myuser = user;
+              if(user != undefined){
+                  userAlready = true;
+              }
+          }
+      });
+        if(userAlready){
+            setuserNameError("User already exists.")
+        }
+        else{
+          setuserNameError("")
+          Database.mydb_add_user(userName)
+          handleValidation()
+        }
+      })
+    }
+    else{
+      setuserNameError("Please Enter a valid Username")
+    }
+
+  }
+
+
 
   const loginSubmit = (e) => {
     e.preventDefault();
@@ -52,8 +86,9 @@ export function LoginForm() {
         <div className="row d-flex justify-content-center">
           <div className="col-md-4">
             <form id="loginform" onSubmit={loginSubmit}>
-              <h1 id="loginHeader">Log In</h1>
               <div className="form-group">
+              <h1 className="Title">Filmpedia</h1>
+              <h3 id="loginHeader">Log In</h3>
                 <input
                   className="form-control"
                   placeholder="Enter Username"
@@ -63,10 +98,8 @@ export function LoginForm() {
                 {userNameError}
                 </small>
               </div>
-              <div className="buttons">
               <button type="submit" id="lgn" className="btn btn-primary">Login</button>
-              <button type="submit" id="reg" className="btn btn-primary">Register</button>
-              </div>
+              <button onClick={(e) => {handleRegister(e)}} type="button" className="btn btn-dark">Register</button>
             </form>
           </div>
         </div>
