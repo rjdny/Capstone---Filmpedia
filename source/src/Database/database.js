@@ -7,41 +7,36 @@ const apikey = "k_btf7zrnt";
 
 export class Database
 {
-    static currentMovies;
-    static currentUsers;
     
     static GetIsLoggedIn(){
-        return !(localStorage.getItem("userId") == null)
+        return !(localStorage.getItem("user") == null)
     }
 
 
-    static Get_CurrentUserId(){
-        var user = localStorage.getItem("userId");
+    static Get_CurrentUser(){
+        var user = JSON.parse(localStorage.getItem("user"));
         return user;
     }
 
-    static Set_CurrentUserId(id){
-        localStorage.setItem("userId",id)
+    static Set_CurrentUser(userObj){
+        localStorage.setItem("user",JSON.stringify(userObj))
     }
-
-    static GetUserByName(nameStr){
-        this.currentUsers.forEach(user => {
-            if(user.username === nameStr){
-                return user;
-            }
-        });
-        return undefined;
-    }
-
 
     static mydb_get_users(){
          return fetch(`${mydb_api}/Users`)
         .then((response) => response.json())
-        .then((data) => {this.currentUsers = data; return data})
+        .then((data) => {return data})
     }
 
-    static mydb_add_user(userObj){
-        //wip
+    static mydb_add_user(userName){
+        var data = {"username":userName}
+        fetch(`${mydb_api}/Users`, {
+            method: 'POST', // or 'PUT'
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+          })
     }
     static mydb_like(movieId){
         //wip
@@ -50,14 +45,5 @@ export class Database
         //wip
     }
 
-
-    static imdb_movies_Search(term){
-        return fetch(`${imdb_api}/SearchMovie/${apikey}/${term}`)
-        .then((response) => response.json())
-        .then((data) => data.results)
-    }
-    static imdb_movies_Top(ammount){   
-
-    }
 }
 

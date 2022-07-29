@@ -6,18 +6,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import { Database } from "./Database/database";
 import { LoginForm } from "./LoginForm/LoginForm";
-
+import MovieCard from "./MovieCard/MovieCard";
+import {FourOFour} from "./404/FourOFour";
+import { Movies } from "./movies/Movies";
+import MoviePage from "./MoviePage/MoviePage";
+import { Favorites } from "./movies/Favorites";
 
 export default function AppVeiws() {
 
   return (
     Database.GetIsLoggedIn() ? 
     <>
-      <Navigation/>
       <Routes>
-        <Route path="/" element={<><h1>Main</h1><div>Some information in main!!!</div></>}/>
-        <Route path="/home" element={<><h1>Home</h1><div>Welcome Home!!!</div></>}/>
-        <Route path="/about" element={<><h1>About</h1><div>Information about the site here!!</div></>}/>
+        <Route path="/movies" element={<><Navigation/><Movies/></>}/>
+        <Route path="/movies/:movieId" element={<><Navigation/> <MoviePage/></>}/>
+        <Route path="/favorites" element={<><Navigation/><Favorites/></>}/>
+        <Route path="*" element={<FourOFour/>} />
       </Routes>
     </>:<>
     <LoginForm/>

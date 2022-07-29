@@ -7,10 +7,12 @@
 
 
 .btn{
-    width:100%;
+    width:97%;
+    margin:5px;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: row;
+.Title{
+    position:absolute;
+    top:-100px;
+    left:20%;
 }
