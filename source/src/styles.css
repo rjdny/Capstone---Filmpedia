@@ -1,0 +1,31 @@
+
+body {
+  color: white;
+  background-color: #202030;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+
+.Tiny {
+  font-size: x-small;
+}
+
+.CardHolder {
+  padding-left: 10px;
+}
+
+.Card {
+  width: 190px;
+  height: 350px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: #151520;
+}
+
+.Title {
+  color: cyan;
+}

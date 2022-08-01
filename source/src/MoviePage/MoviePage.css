@@ -1,0 +1,55 @@
+.moviepage{
+    position:absolute;
+    left: 5%;
+    top:10%;
+    width: 90%;
+    display: flex;
+    color:cornsilk;
+    flex-direction: column;
+    border-color:black;
+    border-style:solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.posteron{
+    width: 28%;
+}
+
+.movieInfos{
+    font-size:x-large;
+    position:absolute;
+    left:30%;
+    top: 5%;
+}
+
+.summaryDiv{
+    padding-top: 10px;
+}
+.likebutton{
+    width:300px;
+}
+
+
+.comment{
+    border-style: solid;
+    border-color: #202030;
+    background-color:#303040;
+    width:400px;
+    display: flex;
+    flex-direction:column;
+}
+.inputt{
+    width:20%;
+    margin-left: 5px;
+}
+
+.postButton{
+    width:20%;
+}
+
+.deleteButton{
+    background-color: red;
+    width:90%;
+}
+
