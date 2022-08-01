@@ -1,2 +1,0 @@
-# ReactStrapTests
-Created with CodeSandbox
