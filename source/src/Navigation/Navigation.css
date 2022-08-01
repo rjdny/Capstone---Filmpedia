@@ -1,0 +1,9 @@
+.navv{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 2147483647;
+}
+#logoutButton{
+    width: 112px;
+}

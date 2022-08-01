@@ -1,0 +1,19 @@
+
+.MovieContainer{
+    display:flex;
+    flex-direction: row;
+}
+
+.searchDiv{
+   margin:10px;
+   margin-left: 40%;
+}
+
+.username{
+    padding-right: 10px;
+}
+
+.holder{
+    top:57px;
+    position:absolute;
+}
