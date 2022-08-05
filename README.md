@@ -15,9 +15,10 @@ My goal was gain a deeper understanding of React Hooks, state, and url paramater
 ### Features
 
 <p>
-• Users can set unique exercise, training, and playtime goals for each pup.<br>
-• Users can record exercise, training, and playtime sessions for each pup.<br>
-• Users can track each pup's unique progress and make adjustments to the goals if necessary.<br>• Users can follow other pups and view their progress.
+• Users can add movies to the database.<br>
+• Users can view, click on (to see more info), like, or comment on any movie. <br>
+• Users can view all their liked movies, as well as how many people like any movie.<br>
+• Users can remove their likes, or comments.
 </p>
 
 ### Technologies Used
