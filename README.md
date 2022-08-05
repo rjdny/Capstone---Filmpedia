@@ -1,6 +1,6 @@
 ## Filmpedia
 
-<b style="font-size: 20px;"><i>The app keep track of all your </i></b>
+<b style="font-size: 20px;"><i>The app keep track of all your favorite movies</i></b>
 
 ### Application Overview
 
